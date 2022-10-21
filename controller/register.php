@@ -33,7 +33,7 @@
             if ($continuarUsuario > 0){
                 echo "<script>
                     alert('Usuario registrado con exito')
-                    window.location = '../views/login.html'
+                    window.location = '../views/login.html  '
                     
                  </script>";
             }

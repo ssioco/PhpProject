@@ -46,6 +46,53 @@
             </form>
           </div>
         </div>
-      </nav>    
+      </nav>
+      <?php
+      include('conect.php');
+      $query="SELECT * FROM usuarios";
+      echo '<table border="0" cellspacing="2" cellpadding="2">
+              <tr>
+                <td> 
+                  <font face="arial">Código</font>
+                </td>
+                <td> 
+                  <font face="arial">Nombre</font>
+                </td>
+                <td> 
+                  <font face="arial">Correo</font>
+                </td>
+                <td> 
+                  <font face="arial">NickName</font>
+                </td>
+                <td> 
+                  <font face="arial">Clave</font>
+                </td>
+              </tr>
+            ';
+      if($result=$con->query($query)){
+        while ($row = $result->fetch_assoc()){
+          $field1name = $row["idUsuario"];
+          $field2name = $row["nombre"];
+          $field3name = $row["correo"];
+          $field4name = $row["usuario"];
+          $field5name = $row["clave"];
+
+          echo '<tr>
+                  <td>'.$field1name.'</td>
+                  <td>'.$field2name.'</td>
+                  <td>'.$field3name.'</td>
+                  <td>'.$field4name.'</td>
+                  <td>'.$field5name.'</td>
+                </tr>'
+                ;
+        }
+      }
+
+            
+                 
+                  
+                  
+
+      ?> 
 </body>
 </html>
